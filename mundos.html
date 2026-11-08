@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echoes of the Void - Mundos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="mundos">
+  <header class="topo">
+    <h1 class="logo">Echoes of the Void</h1>
+    <nav id="menu"></nav>
+  </header>
+
+  <main class="conteudo">
+    <h2>Mundos</h2>
+    <p>Escolha o mundo para sobreviver.</p>
+
+    <!-- Carrossel: o JS cria os botões; aqui só ficam os slides -->
+    <div class="carrossel carrossel-mundos" data-rotulo="Mundos do jogo">
+      <div class="carrossel-trilho">
+      <article class="slide" id="frostgard">
+        <figure class="foto" data-rotulo="Foto de FrostGard">
+          <img src="img/frostgard.jpg" alt="Planeta FrostGard coberto de gelo, com fortalezas de cristal">
+        </figure>
+        <h3>FrostGard</h3>
+        <p>FrostGard é um mundo congelado em um inverno eterno, com temperaturas que chegam a -20 °C em algumas regiões ou durante tempestades de névoa árdua. Uma névoa glacial devora o horizonte e a temperatura cai drasticamente à medida que a noite se aproxima.</p>
+        <p>Apenas ruínas de pedra antiga, fortalezas abandonadas e cabanas de caçadores oferecem refúgio contra o frio letal.</p>
+        <p class="dica"><strong>Dica:</strong> procure refúgio e suprimentos em estruturas seguras e aquecidas antes do anoitecer.</p>
+        <button class="botao botao-escolher-mundo" data-mundo="frostgard">Escolher e jogar</button>
+      </article>
+      <article class="slide" id="thalassia">
+        <figure class="foto" data-rotulo="Foto de Thalassia">
+          <img src="img/thalassia.jpg" alt="Planeta Thalassia, oceano cristalino com ilhas e cabanas">
+        </figure>
+        <h3>Thalassia</h3>
+        <p>Thalassia é um mundo predominantemente feito de águas cristalinas e algumas ilhas paradisíacas. Apenas 5% da superfície é composta por terra firme: milhares de ilhas espalhadas por um oceano vasto, vivo e transbordante de magia elemental.</p>
+        <p>Há registros de monstros marinhos na vastidão do oceano.</p>
+        <p class="dica"><strong>Dica:</strong> o jogador viaja entre as ilhas em busca de suprimentos. Os registros não aconselham passar a noite em alto-mar.</p>
+        <button class="botao botao-escolher-mundo" data-mundo="thalassia">Escolher e jogar</button>
+      </article>
+      <article class="slide" id="terra-zero">
+        <figure class="foto" data-rotulo="Foto de Terra Zero">
+          <img src="img/terra-zero.jpg" alt="Planeta Terra Zero, com cidades em ruínas, crateras e fogo">
+        </figure>
+        <h3>Terra Zero</h3>
+        <p>A Terra parece um planeta pós-apocalíptico comum. Cidades em ruínas, veículos abandonados e vegetação mutante cobrem a superfície, após o que os poucos sobreviventes chamam de "A Guerra do Eclipsamento".</p>
+        <p>Acredita-se que a humanidade destruiu-se a si mesma em um conflito global por recursos. Por isso, a Terra se tornou um bioma de laboratório em escala planetária.</p>
+        <p>Uma civilização extraterrestre ultra-avançada, conhecida nas sombras como os <strong>Observadores</strong>, mantém o planeta instável e com constantes desastres naturais.</p>
+        <p class="dica"><strong>Dica:</strong> cidades fantasmas têm a maior chance de render recursos para sobrevivência. Cuidado com o que você vê: nem tudo é real.</p>
+        <button class="botao botao-escolher-mundo" data-mundo="terrazero">Escolher e jogar</button>
+      </article>
+      </div>
+    </div>
+  </main>
+
+
+  <script src="js/nav.js"></script>
+  <script src="js/carrossel.js"></script>
+  <script src="js/mundos.js"></script>
+</body>
+</html>

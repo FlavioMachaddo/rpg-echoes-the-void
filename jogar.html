@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echoes of the Void - Jogar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="jogar">
+  <header class="topo">
+    <h1 class="logo">Echoes of the Void</h1>
+    <nav id="menu"></nav>
+  </header>
+
+  <main class="conteudo">
+    <h2>Jogar</h2>
+
+    <!-- Tela 1: escolher o mundo (os botões são criados pelo JS) -->
+    <section id="tela-inicio">
+      <p id="aviso-classe"></p>
+      <div id="lista-mundos" class="mundos-escolha"></div>
+    </section>
+
+    <!-- Tela 2: o jogo (começa escondida) -->
+    <section id="tela-jogo" hidden>
+      <div class="painel" id="painel"></div>
+      <div class="palco-caixa" id="palco-caixa">
+        <canvas id="palco" width="480" height="270" role="img" aria-label="Cena do jogo"></canvas>
+      </div>
+      <article class="cena">
+        <p id="texto-cena"></p>
+        <div id="opcoes" class="opcoes"></div>
+      </article>
+      <div id="acoes" class="acoes"></div>
+      <p id="resultado" class="resultado" aria-live="polite"></p>
+    </section>
+  </main>
+
+
+  <script src="js/nav.js"></script>
+  <script src="js/historia.js"></script>
+  <script src="js/palco.js"></script>
+  <script src="js/jogo.js"></script>
+</body>
+</html>

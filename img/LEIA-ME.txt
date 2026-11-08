@@ -1,0 +1,4 @@
+Coloque aqui as fotos, com estes nomes exatos (formato .jpg):
+engenheiro.jpg  atleta.jpg  bombeiro.jpg
+frostgard.jpg  thalassia.jpg  terra-zero.jpg
+Se a foto for .png, troque a extensao no src da tag <img> no HTML.

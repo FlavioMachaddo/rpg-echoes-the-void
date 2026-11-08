@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echoes of the Void - Regras</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="regras">
+  <header class="topo">
+    <h1 class="logo">Echoes of the Void</h1>
+    <nav id="menu"></nav>
+  </header>
+
+  <main class="conteudo">
+    <h2>Regras</h2>
+    <p>Em Echoes of the Void você escolhe uma classe e um mundo e tenta sobreviver. Em cada mundo existem dois chefes: um menor e um final. Derrote os dois para vencer.</p>
+
+    <h3>Atributos</h3>
+    <table>
+      <thead><tr><th>Atributo</th><th>Para que serve</th><th>Limite</th></tr></thead>
+      <tbody>
+        <tr><td>HP</td><td>Vida. Se chegar a 0, você perde.</td><td>0 a 100</td></tr>
+        <tr><td>Defesa</td><td>Resiste a perigos e reduz o dano dos chefes.</td><td>0 a 100</td></tr>
+        <tr><td>Ataque</td><td>Acerta chefes e vence obstáculos. A arma soma no ataque.</td><td>0 a 30</td></tr>
+        <tr><td>Agilidade</td><td>Esquiva de golpes e supera obstáculos.</td><td>0 a 20</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Testes de dado (d20)</h3>
+    <p>Quando algo é incerto, role um dado de 20 lados (d20) e some o bônus do atributo. O bônus é o valor do atributo dividido por 5, arredondado para baixo. No ataque, a arma entra na conta. Se o total for igual ou maior que a dificuldade, você passa.</p>
+    <p>Um 20 natural sempre passa, e um 1 natural sempre falha. Um 20 natural no ataque contra um chefe causa dano dobrado.</p>
+    <table>
+      <thead><tr><th>Classe</th><th>Bônus de ataque</th><th>Bônus de agilidade</th><th>Bônus de defesa</th></tr></thead>
+      <tbody>
+        <tr><td>Engenheiro</td><td>+3</td><td>+3</td><td>+6</td></tr>
+        <tr><td>Atleta</td><td>+4</td><td>+4 (até +9)</td><td>+2</td></tr>
+        <tr><td>Bombeiro</td><td>+5</td><td>+2</td><td>+10</td></tr>
+      </tbody>
+    </table>
+    <p>Exemplo: o Bombeiro tem 20 de ataque e o machado dá +8, então 28 ÷ 5 = +5. Contra dificuldade 12, ele precisa tirar 7 ou mais no d20.</p>
+
+    <h3>Sobrevivência</h3>
+    <p>O tempo passa em dias, e cada dia tem três fases: manhã, tarde e noite. Cada ação gasta uma fase.</p>
+    <ul>
+      <li><strong>Explorar:</strong> escolha um dos 3 locais do mundo. Quanto maior o perigo, maior a chance de encontrar um monstro, mas também maior a recompensa extra de suprimentos. Sem monstro, sorteia-se um evento que pode pedir um teste de atributo.</li>
+      <li><strong>Descansar:</strong> recupera 20 de HP, ou 30 se houver acampamento montado.</li>
+      <li><strong>Montar acampamento:</strong> custa 1 suprimento, aparece na cena do jogo e protege você na noite do mesmo dia.</li>
+      <li><strong>Usar suprimento:</strong> não gasta fase. Cura 20 de HP (35 para o Bombeiro).</li>
+    </ul>
+    <p>A noite é perigosa. Quando ela começa sem acampamento montado, o mundo causa dano: 10 de HP em FrostGard e na Terra Zero, e 15 em Thalassia. Em cada novo dia você consome 1 suprimento, e sem nenhum perde 15 de HP.</p>
+
+    <h3>Classes</h3>
+    <ul>
+      <li><strong>Engenheiro:</strong> gasta 2 suprimentos para melhorar a arma (+2 de ataque), quantas vezes quiser.</li>
+      <li><strong>Atleta:</strong> quanto menos HP tem, mais agilidade ganha (até +5 no bônus).</li>
+      <li><strong>Bombeiro:</strong> cada suprimento cura 35 de HP, em vez de 20.</li>
+    </ul>
+
+    <h3>Combate contra chefes</h3>
+    <p>O chefe menor aparece depois de 3 explorações e o chefe final depois de 6. O combate é por turnos. A cada turno você escolhe uma ação e depois o chefe ataca.</p>
+    <ul>
+      <li><strong>Atacar:</strong> teste de ataque contra a defesa do chefe. Se acertar, o dano é seu ataque mais a arma.</li>
+      <li><strong>Defender:</strong> o próximo dano que você sofrer cai pela metade.</li>
+      <li><strong>Usar suprimento:</strong> você se cura, mas gasta o turno.</li>
+      <li><strong>Fugir:</strong> só contra monstros comuns. Teste de agilidade contra 12; se falhar, o monstro ataca.</li>
+    </ul>
+    <p>No ataque do chefe, você tenta esquivar com um teste de agilidade contra 12. Se falhar, sofre dano igual ao ataque do chefe menos metade da sua defesa (mínimo 5).</p>
+    <table>
+      <thead><tr><th>Mundo</th><th>Chefe menor</th><th>Chefe final</th></tr></thead>
+      <tbody>
+        <tr><td>FrostGard</td><td>Lobo de Gelo</td><td>Rainha da Geada</td></tr>
+        <tr><td>Thalassia</td><td>Serpente das Marés</td><td>Leviatã de Cristal</td></tr>
+        <tr><td>Terra Zero</td><td>Drone Sentinela</td><td>O Observador</td></tr>
+      </tbody>
+    </table>
+    <p>O chefe menor tem 70 de HP, ataque 26 e defesa 13. O chefe final tem 150 de HP, ataque 36 e defesa 14. A cada 3 turnos, o chefe faz um <strong>golpe forte</strong>: a esquiva fica mais difícil (contra 15) e o dano é 1,5 vez maior. Ao vencer o chefe menor, você ganha 3 suprimentos e 20 de HP.</p>
+    <p>Ao explorar, você também pode encontrar monstros comuns (cerca de 30 a 35 de HP, ataque 14 a 16 e defesa 10). Cada um derrotado deixa 1 suprimento. Cada mundo tem dois tipos: em FrostGard, o Espectro Gélido e a Aranha de Gelo; em Thalassia, o Caranguejo Gigante e a Água-viva Sombria; na Terra Zero, o Mutante Rastejante e a Sombra Observada.</p>
+
+    <h3>Vitória e derrota</h3>
+    <p>Você vence ao derrotar o chefe final do mundo. Você perde se o HP chegar a 0.</p>
+  </main>
+
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

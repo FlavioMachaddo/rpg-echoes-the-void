@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echoes of the Void - Personagem</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="personagem">
+  <header class="topo">
+    <h1 class="logo">Echoes of the Void</h1>
+    <nav id="menu"></nav>
+  </header>
+
+  <main class="conteudo">
+    <h2>Personagem</h2>
+    <p>Conheça as classes disponíveis. A ficha interativa será montada aqui depois.</p>
+
+    <!-- Carrossel: o JS cria os botões; aqui só ficam os slides -->
+    <div class="carrossel carrossel-personagens" data-rotulo="Classes jogáveis">
+      <div class="carrossel-trilho">
+      <article class="slide" id="engenheiro">
+        <figure class="foto" data-rotulo="Foto do Engenheiro">
+          <img src="img/engenheiro.jpg" alt="Engenheiro em pixel art, com capacete amarelo e martelo">
+        </figure>
+        <h3>Engenheiro</h3>
+        <p>Especialista em construção e melhoria de itens mais fortes.</p>
+        <ul class="atributos">
+          <li><span>HP</span><span>80</span></li>
+          <li><span>Defesa</span><span>30</span></li>
+          <li><span>Ataque</span><span>10</span></li>
+          <li><span>Agilidade</span><span>15</span></li>
+          <li><span>Arma</span><span>Martelo (+5 de ataque)</span></li>
+        </ul>
+        <button class="botao botao-escolher" data-classe="engenheiro">Escolher</button>
+      </article>
+      <article class="slide" id="atleta">
+        <figure class="foto" data-rotulo="Foto do Atleta">
+          <img src="img/atleta.jpg" alt="Atleta em pixel art, com roupa escura e relâmpago no peito">
+        </figure>
+        <h3>Atleta</h3>
+        <p>Quanto menos vida, mais ágil ele fica.</p>
+        <ul class="atributos">
+          <li><span>HP</span><span>90</span></li>
+          <li><span>Defesa</span><span>10</span></li>
+          <li><span>Ataque</span><span>20</span></li>
+          <li><span>Agilidade</span><span>20</span></li>
+          <li><span>Arma</span><span>Arco e flecha (+3 de ataque)</span></li>
+        </ul>
+        <button class="botao botao-escolher" data-classe="atleta">Escolher</button>
+      </article>
+      <article class="slide" id="bombeiro">
+        <figure class="foto" data-rotulo="Foto do Bombeiro">
+          <img src="img/bombeiro.jpg" alt="Bombeiro em pixel art, com capacete vermelho e machado">
+        </figure>
+        <h3>Bombeiro</h3>
+        <p>Sabe como fabricar itens de cura melhores e mais eficientes.</p>
+        <ul class="atributos">
+          <li><span>HP</span><span>100</span></li>
+          <li><span>Defesa</span><span>50</span></li>
+          <li><span>Ataque</span><span>20</span></li>
+          <li><span>Agilidade</span><span>12</span></li>
+          <li><span>Arma</span><span>Machado (+8 de ataque)</span></li>
+        </ul>
+        <button class="botao botao-escolher" data-classe="bombeiro">Escolher</button>
+      </article>
+      </div>
+    </div>
+
+    <p id="status-classe" aria-live="polite"></p>
+
+    <h3>Limites dos atributos</h3>
+    <p>Os valores das classes podem aumentar conforme o progresso do jogador.</p>
+    <!-- <table> = tabela. <tr> é uma linha, <th> um título de coluna, <td> uma célula. -->
+    <table>
+      <thead>
+        <tr><th>Atributo</th><th>Mínimo</th><th>Máximo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>HP</td><td>0</td><td>100</td></tr>
+        <tr><td>Defesa</td><td>0</td><td>100</td></tr>
+        <tr><td>Ataque</td><td>0</td><td>30</td></tr>
+        <tr><td>Agilidade</td><td>0</td><td>20</td></tr>
+        <tr><td>Arma</td><td colspan="2">específica de cada classe</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+
+  <script src="js/nav.js"></script>
+  <script src="js/carrossel.js"></script>
+  <script src="js/personagem.js"></script>
+</body>
+</html>
