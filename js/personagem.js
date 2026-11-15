@@ -1,4 +1,4 @@
-// Guarda a classe escolhida no navegador (localStorage) para a página Jogar ler depois.
+
 const botoesClasse = document.querySelectorAll(".botao-escolher");
 const statusClasse = document.getElementById("status-classe");
 
