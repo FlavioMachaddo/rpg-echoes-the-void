@@ -1,9 +1,9 @@
-// Motor do jogo de sobrevivência. Lê a classe (localStorage) e os mundos (historia.js).
-const DIVISOR = 5;                  // bônus de teste = atributo ÷ DIVISOR
-const FASES = ["Manhã", "Tarde", "Noite"];
-const PROGRESSO_CHEFE = [3, 6];     // explorações necessárias para o chefe menor e o final
 
-// Mesmos números da página Personagem. Se mudar lá, mude aqui.
+const DIVISOR = 5;              
+const FASES = ["Manhã", "Tarde", "Noite"];
+const PROGRESSO_CHEFE = [3, 6];    
+
+
 const CLASSES = {
   engenheiro: { nome: "Engenheiro", hp: 80,  defesa: 30, ataque: 10, agilidade: 15, bonusArma: 5, cura: 20 },
   atleta:     { nome: "Atleta",     hp: 90,  defesa: 10, ataque: 20, agilidade: 20, bonusArma: 3, cura: 20 },
@@ -18,7 +18,7 @@ function classeEscolhida() {
   try { return localStorage.getItem("classeEscolhida"); } catch (erro) { return null; }
 }
 
-// Bônus de um atributo. O Atleta ganha agilidade quanto menos vida tiver.
+
 function bonus(attr) {
   let valor = estado[attr];
   if (attr === "ataque") valor += estado.bonusArma;
@@ -27,7 +27,7 @@ function bonus(attr) {
   return b;
 }
 
-// Rola d20 + bônus contra uma dificuldade. 20 natural sempre passa; 1 natural sempre falha.
+
 function rolar(attr, dif) {
   const d20 = Math.floor(Math.random() * 20) + 1;
   const b = bonus(attr);
@@ -46,7 +46,7 @@ function mostrar(msgs) {
   desenhar();
 }
 
-// ----- Tela inicial -----
+
 function mundoEscolhido() {
   try { return localStorage.getItem("mundoEscolhido"); } catch (erro) { return null; }
 }
@@ -81,7 +81,7 @@ function iniciar(idMundo) {
   mostrar(["Sobreviva e derrote os dois chefes de " + mundo().nome + "."]);
 }
 
-// ----- Tempo: cada ação gasta uma fase do dia (Manhã, Tarde, Noite) -----
+
 function passarFase(msgs) {
   estado.fase++;
   if (estado.fase > 2) {
@@ -97,8 +97,6 @@ function passarFase(msgs) {
   }
 }
 
-// ----- Ações de sobrevivência -----
-// Explorar um dos 3 locais do mundo: pode surgir um monstro ou um evento.
 function explorar(i) {
   const m = mundo();
   const local = m.locais[i];
@@ -142,7 +140,7 @@ function montarAcampamento() {
   mostrar(msgs);
 }
 
-// Ação livre (não gasta fase). Em luta, gasta o turno.
+
 function usarSuprimento() {
   estado.sup--;
   estado.hp = Math.min(estado.hpMax, estado.hp + estado.cura);
@@ -151,14 +149,14 @@ function usarSuprimento() {
   mostrar(msgs);
 }
 
-// Habilidade do Engenheiro
+
 function melhorarArma() {
   estado.sup -= 2;
   estado.bonusArma += 2;
   mostrar(["Você melhora seu martelo: +2 de ataque."]);
 }
 
-// ----- Chefes e combate -----
+
 function enfrentar() {
   const chefe = mundo().chefes[estado.chefe];
   estado.luta = { alvo: chefe, hp: chefe.hp, defendendo: false, chefe: true, turno: 0 };
@@ -210,7 +208,7 @@ function turnoLuta(acao) {
   mostrar(msgs);
 }
 
-// O inimigo tenta acertar você. A cada 3 turnos, um chefe faz um golpe forte (esquiva mais difícil, dano x1,5).
+
 function inimigoAtaca(msgs) {
   const luta = estado.luta;
   const alvo = luta.alvo;
@@ -229,7 +227,7 @@ function inimigoAtaca(msgs) {
   luta.defendendo = false;
 }
 
-// Treme a cena depois de um golpe (a animação só roda se o sistema permitir movimento)
+
 function tremer() {
   const caixa = $("palco-caixa");
   caixa.classList.remove("golpe");
@@ -246,7 +244,7 @@ function novoBotao(texto, aoClicar, desligado) {
   return botao;
 }
 
-// ----- Desenha a tela -----
+
 function desenhar() {
   const m = mundo();
   const chefe = m.chefes[estado.chefe];
