@@ -1,8 +1,4 @@
-// Dados de cada mundo (edite à vontade; o jogo.js só lê estes dados).
-// locais: 3 lugares para explorar (cenario = qual desenho; perigo = chance de monstro; bonus = suprimentos extras).
-// eventos: o que pode acontecer ao Explorar sem monstro. teste: [atributo, dificuldade].
-// monstros: inimigos comuns. chefes: o primeiro é o menor, o segundo é o final. defesa = dificuldade para acertar.
-// imagem: arquivo do monstro em img/monstros/.
+
 const HISTORIAS = {
   frostgard: {
     nome: "FrostGard",
