@@ -1,4 +1,4 @@
-// Lista das páginas do site: id (igual ao data-pagina do <body>), texto do menu e arquivo.
+
 const paginas = [
   { id: "index",      texto: "Home",       arquivo: "index.html" },
   { id: "regras",     texto: "Regras",     arquivo: "regras.html" },
@@ -7,7 +7,7 @@ const paginas = [
   { id: "jogar",      texto: "Jogar",      arquivo: "jogar.html" }
 ];
 
-// Monta o menu dentro do <nav id="menu"> de cada página.
+
 function montarMenu() {
   const menu = document.getElementById("menu");
   const paginaAtual = document.body.dataset.pagina;
