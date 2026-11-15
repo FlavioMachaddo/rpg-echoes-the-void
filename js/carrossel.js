@@ -1,14 +1,14 @@
-// Carrossel reutilizável: funciona em qualquer <div class="carrossel"> da página.
+
 function montarCarrossel(carrossel) {
   const trilho = carrossel.querySelector(".carrossel-trilho");
   const slides = Array.from(trilho.querySelectorAll(".slide"));
   const reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Acessibilidade: o trilho pode receber foco e é anunciado como carrossel
+  
   trilho.tabIndex = 0;
   trilho.setAttribute("aria-label", carrossel.dataset.rotulo);
 
-  // Cria botão anterior, pontos e botão próximo
+  
   const controles = document.createElement("div");
   controles.className = "carrossel-controles";
 
@@ -33,7 +33,7 @@ function montarCarrossel(carrossel) {
   controles.append(anterior, ...pontos, proximo);
   carrossel.appendChild(controles);
 
-  // Descobre qual slide está mais perto do centro do trilho
+
   function indiceAtual() {
     const centro = trilho.scrollLeft + trilho.clientWidth / 2;
     let melhor = 0;
@@ -45,14 +45,14 @@ function montarCarrossel(carrossel) {
     return melhor;
   }
 
-  // Rola o trilho até centralizar o slide i
+
   function irPara(i) {
     i = Math.max(0, Math.min(slides.length - 1, i));
     const alvo = slides[i].offsetLeft + slides[i].offsetWidth / 2 - trilho.clientWidth / 2;
     trilho.scrollTo({ left: alvo, behavior: reduzirMovimento ? "auto" : "smooth" });
   }
 
-  // Atualiza destaque, pontos e botões
+
   function atualizar() {
     const atual = indiceAtual();
     slides.forEach(function (slide, i) { slide.classList.toggle("ativo", i === atual); });
@@ -78,7 +78,7 @@ function montarCarrossel(carrossel) {
   atualizar();
 }
 
-// Se a foto não existir, marca a <figure> para mostrar o rótulo roxo no lugar
+
 function tratarFotos() {
   document.querySelectorAll(".foto img").forEach(function (img) {
     function semFoto() { img.parentElement.classList.add("sem-foto"); }
