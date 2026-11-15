@@ -1,10 +1,10 @@
-// Desenha a cena do minigame no <canvas>: cenário, acampamento, personagem e monstros.
+
 const LARG = 480, ALT = 270, CHAO = 175, PES = 238;
 const canvas = document.getElementById("palco");
 const ctx = canvas.getContext("2d");
 ctx.imageSmoothingEnabled = false;
 
-// Sprites dos personagens (recortados das suas imagens)
+
 const sprites = {};
 let ultimaCena = null;
 ["engenheiro", "atleta", "bombeiro"].forEach(function (id) {
@@ -16,7 +16,7 @@ let ultimaCena = null;
 
 function ret(cor, x, y, w, h) { ctx.fillStyle = cor; ctx.fillRect(x, y, w, h); }
 
-// Triângulo em degraus de 4px (pinheiros, telhados, tenda)
+
 function tri(cor, cx, base, larg, alt) {
   const n = Math.floor(alt / 4);
   for (let i = 0; i < n; i++) {
@@ -25,14 +25,14 @@ function tri(cor, cx, base, larg, alt) {
   }
 }
 
-// Cores do céu e do chão de cada mundo
+
 const VISUAL = {
   frostgard: { ceu: ["#0b1d3a", "#a6d8ff"], chao: "#e2f3ff", faixa: "#9cc8e8" },
   thalassia: { ceu: ["#3fa8f5", "#d8f3ff"], chao: "#f2dca0", faixa: "#2ab8d8" },
   terrazero: { ceu: ["#3a1c3f", "#e0824a"], chao: "#4a3a2e", faixa: "#2e2420" }
 };
 
-// Os 3 locais de cada mundo (índice = campo "cenario" em historia.js). x = centro, b = chão da peça
+
 const PECAS = {
   frostgard: [
     function (x, b) { ret("#4b3a2a", x - 3, b - 14, 6, 14); tri("#2f6f7a", x, b - 10, 44, 66); tri("#eaf7ff", x, b - 40, 28, 28); },
@@ -51,7 +51,7 @@ const PECAS = {
   ]
 };
 
-// Imagens dos monstros e chefes (o arquivo de cada um está em historia.js, campo "imagem")
+
 const imgsMonstros = {};
 Object.keys(HISTORIAS).forEach(function (id) {
   HISTORIAS[id].monstros.concat(HISTORIAS[id].chefes).forEach(function (alvo) {
@@ -75,7 +75,7 @@ function acampamento() {
   ret("#ffe066", 311, PES - 12, 6, 8);
 }
 
-// cena = { mundo, local, classe, abrigo, alvo, noite }
+
 function desenharPalco(cena) {
   ultimaCena = cena;
   const v = VISUAL[cena.mundo];
